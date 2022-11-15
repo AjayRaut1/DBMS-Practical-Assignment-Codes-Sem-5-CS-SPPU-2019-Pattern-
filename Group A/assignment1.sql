@@ -1,0 +1,2 @@
+-- No Code Just theory part
+-- ER modeling and normalization
