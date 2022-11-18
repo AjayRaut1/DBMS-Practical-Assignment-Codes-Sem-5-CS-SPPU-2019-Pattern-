@@ -41,7 +41,7 @@ INSERT INTO borrower VALUES(50,'SHREYAS',TO_DATE('09-09-2022','DD-MM-YYYY'),'SPI
 -- Step 2) Run below commands all at once
 
 DECLARE
-	i_roll_no NUMBER;
+	i_roll_no NUMBER:=54;
 	name_of_book VARCHAR2(25);
 	no_of_days NUMBER;
 	return_date DATE := TO_DATE(SYSDATE,'DD-MM-YYYY');
