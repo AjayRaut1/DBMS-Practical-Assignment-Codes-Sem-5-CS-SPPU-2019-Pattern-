@@ -40,36 +40,63 @@ INSERT INTO borrower VALUES(50,'SHREYAS',TO_DATE('09-09-2022','DD-MM-YYYY'),'SPI
 
 -- Step 2) Run below commands all at once
 
-DECLARE 
-i_roll_no NUMBER := 54;
-name_of_book VARCHAR2(25);
-no_of_days NUMBER;
-return_date DATE := TO_DATE(SYSDATE,'DD-MM-YYYY');
-temp NUMBER;
-doi DATE;
-fine NUMBER;
+DECLARE
+	i_roll_no NUMBER;
+	name_of_book VARCHAR2(25);
+	no_of_days NUMBER;
+	return_date DATE := TO_DATE(SYSDATE,'DD-MM-YYYY');
+	temp NUMBER;
+	doi DATE;   -- this is date of issue
+	fine NUMBER:=0;
+    NEG_DAYS exception;
 
 BEGIN
-i_roll_no := i_roll_no;
-name_of_book := '&nameofbook';
---dbms_output.put_line(return_date);
-SELECT to_date(borrower.dateofissue,'DD-MM-YYYY') INTO doi FROM borrower
-WHERE borrower.roll_no = i_roll_no AND borrower.name_of_book = name_of_book;
-no_of_days := return_date-doi;
-dbms_output.put_line(no_of_days);
-IF (no_of_days >15 AND no_of_days <=30) THEN
-fine := 5*no_of_days;
-ELSIF (no_of_days>30 ) THEN
-temp := no_of_days-30;
-fine := 150 + temp*50;
-END IF;
-dbms_output.put_line(fine);
-INSERT INTO fine VALUES(i_roll_no,return_date,fine);
-UPDATE borrower SET status = 'R' WHERE borrower.roll_no = i_roll_no;
+
+	i_roll_no := :i_roll_no;  --  this is user input user will put roll no and the name of book
+	name_of_book := :name_of_book;
+
+    -- this is query to find date of issue of certain book
+	SELECT to_date(borrower.dateofissue,'DD-MM-YYYY') INTO doi
+        FROM borrower
+        WHERE borrower.roll_no = i_roll_no
+        AND borrower.name_of_book = name_of_book;
+
+-- this is to find no of days between return date and date of issue
+        no_of_days := return_date-doi;
+
+-- this is to check if no of days is negative
+	IF (no_of_days<0) THEN
+        raise NEG_DAYS;
+        END IF;
+        dbms_output.put_line(no_of_days);
+	IF (no_of_days >15 AND no_of_days <=30) THEN
+		fine := 5*(no_of_days-15);
+
+	ELSIF (no_of_days>30 ) THEN
+		temp := no_of_days-30; -- first 30 will charge only 5 rs per day then  50 rupess per day start
+		fine := 75 + temp*50;
+	END IF;
+	dbms_output.put_line(fine);
+	IF (fine>0) THEN
+        INSERT INTO fine VALUES(i_roll_no,return_date,fine);
+        END IF;
+
+        UPDATE borrower SET status = 'R' WHERE borrower.roll_no = i_roll_no;
+		-- this is to update the status of book to returned R means RETURN I means ISSUED
+EXCEPTION
+        WHEN NEG_DAYS THEN
+	DBMS_OUTPUT.PUT_LINE('NEGATIVE DAYS NOT EXCEPTED');
+        when NO_DATA_FOUND then
+             dbms_output.put_line('no_data_found');
+        when OTHERS then
+             dbms_output.put_line('some_error_found');
 END;
-/
 
 -- Step 3) To display the tables use select commands
 
 SELECT * FROM FINE
 SELECT * FROM BORROWER
+
+-- Step 4) Deleting Tables
+DROP TABLE FINE
+DROP TABLE BORROWER
