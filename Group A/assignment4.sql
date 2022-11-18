@@ -52,8 +52,8 @@ DECLARE
 
 BEGIN
 
-	i_roll_no := :i_roll_no;  --  this is user input user will put roll no and the name of book
-	name_of_book := :name_of_book;
+	i_roll_no := i_roll_no;  --  this is user input user will put roll no and the name of book
+	name_of_book := name_of_book;
 
     -- this is query to find date of issue of certain book
 	SELECT to_date(borrower.dateofissue,'DD-MM-YYYY') INTO doi
