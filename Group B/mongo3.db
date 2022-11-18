@@ -1,0 +1,10 @@
+Mongo-DB 2nd Assignment (Aggregation & Indexing)
+
+use AssgnSecond;
+db.createCollection("customers");
+db.customers.insertMany([{name:"Harry",type:"Developer"},{name:"Carry",type:"Tester"},{name:"Garry",type:"Developer"},{name:"Sohim",type:"Tester"},{name:"Joe",type:"Tester"}]);
+db.customers.find();
+db.customers.aggregate([{$group:{_id:"$type",category:{$sum:1}}}]);
+db.customers.createIndex({name:1},{name:"Developer's Names"});
+db.customers.getIndexes()
+db.customers.dropIndex("Developer's Names")
