@@ -1,15 +1,1 @@
-CRUD operations
 
-use AssgFirst;
-db.dropDatabase();
-db.createCollection("Information");
-db.Information.insertOne({name:"Garry",marks:97});
-db.Information.insertMany([{name:"Garry",marks:97},{name:"Devi",marks:87},{name:"Ruby",marks:69},{name:"Ram",marks:99}]);
-db.Information.find().pretty();
-db.Information.update({name:"Ram"},{$set:{name:"Krishna"}});
-db.Information.replaceOne({"_id":ObjectId("63749ed1f19c503e449d9348")},{name:"CarryBhai"});
-db.Information.deleteOne({name:"Garry"});
-db.Information.deleteMany({name:"Garry",name:"Sam"});
-db.Information.find({$and:[{name:"Krishna"},{marks:99}]}).pretty();
-db.Information.find({$nor:[{name:"Krishna"},{marks:99}]}).pretty();
-db.Information.find({$or:[{name:"Krishna"},{name:"Devi"}]}).pretty();
