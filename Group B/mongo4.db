@@ -1,0 +1,10 @@
+Mongo-DB 3rd Assignment (map & reduce)
+
+use AssgnThird;
+db.createCollection("student_info");
+db.student_info.insertMany([{name:"Lokesh",marks:99},{name:"Ruturaj",marks:89},{name:"Lokesh",marks:59},{name:"Ruturaj",marks:76},{name:"Lokesh",marks:76},{name:"Ruturaj",marks:67}]);
+db.student_info.find().pretty();
+var map = function() {emit(this.name,this.marks);};
+var reduce = function(name,marks){return Array.sum(marks);};
+db.student_info.mapReduce( map,reduce,{out:"Result"} );
+db.Result.find().pretty();
