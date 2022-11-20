@@ -1,0 +1,585 @@
+test> use W3MONGO
+switched to db W3MONGO
+W3MONGO> db.createCollections('restaurants')
+TypeError: db.createCollections is not a function
+W3MONGO> db.createCollection('restaurants')
+{ ok: 1 }
+W3MONGO> db.restaurants.insertOne({)
+Uncaught:
+SyntaxError: Unexpected token (1:26)
+
+> 1 | db.restaurants.insertOne({)
+    |                           ^
+  2 |
+
+W3MONGO>   "address": {
+Uncaught:
+SyntaxError: Missing semicolon. (1:11)
+
+> 1 |   "address": {
+    |            ^
+  2 |
+
+W3MONGO>      "building": "1007",
+Uncaught:
+SyntaxError: Missing semicolon. (1:15)
+
+> 1 |      "building": "1007",
+    |                ^
+  2 |
+
+W3MONGO>      "coord": [ -73.856077, 40.848447 ],
+Uncaught:
+SyntaxError: Missing semicolon. (1:12)
+
+> 1 |      "coord": [ -73.856077, 40.848447 ],
+    |             ^
+  2 |
+
+W3MONGO>      "street": "Morris Park Ave",
+Uncaught:
+SyntaxError: Missing semicolon. (1:13)
+
+> 1 |      "street": "Morris Park Ave",
+    |              ^
+  2 |
+
+W3MONGO>      "zipcode": "10462"
+Uncaught:
+SyntaxError: Missing semicolon. (1:14)
+
+> 1 |      "zipcode": "10462"
+    |               ^
+  2 |
+
+W3MONGO>   },
+Uncaught:
+SyntaxError: Unexpected token (1:2)
+
+> 1 |   },
+    |   ^
+  2 |
+
+W3MONGO>   "borough": "Bronx",
+Uncaught:
+SyntaxError: Missing semicolon. (1:11)
+
+> 1 |   "borough": "Bronx",
+    |            ^
+  2 |
+
+W3MONGO>   "cuisine": "Bakery",
+Uncaught:
+SyntaxError: Missing semicolon. (1:11)
+
+> 1 |   "cuisine": "Bakery",
+    |            ^
+  2 |
+
+W3MONGO>   "grades": [
+Uncaught:
+SyntaxError: Missing semicolon. (1:10)
+
+> 1 |   "grades": [
+    |           ^
+  2 |
+
+W3MONGO>      { "date": { "$date": 1393804800000 }, "grade": "A", "score": 2 },
+...      { "date": { "$date": 1378857600000 }, "grade": "A", "score": 6 },
+...      { "date": { "$date": 1358985600000 }, "grade": "A", "score": 10 },
+...      { "date": { "$date": 1322006400000 }, "grade": "A", "score": 9 },
+...      { "date": { "$date": 1299715200000 }, "grade": "B", "score": 14 }
+...   ],
+Uncaught:
+SyntaxError: Missing semicolon. (1:13)
+
+> 1 |      { "date": { "$date": 1393804800000 }, "grade": "A", "score": 2 },    |              ^
+  2 |      { "date": { "$date": 1378857600000 }, "grade": "A", "score": 6 },  3 |      { "date": { "$date": 1358985600000 }, "grade": "A", "score": 10 },
+  4 |      { "date": { "$date": 1322006400000 }, "grade": "A", "score": 9 },
+W3MONGO>   "name": "Morris Park Bake Shop",
+Uncaught:
+SyntaxError: Missing semicolon. (1:8)
+
+> 1 |   "name": "Morris Park Bake Shop",
+    |         ^
+  2 |
+
+W3MONGO>   "restaurant_id": "30075445"
+Uncaught:
+SyntaxError: Missing semicolon. (1:17)
+
+> 1 |   "restaurant_id": "30075445"
+    |                  ^
+  2 |
+
+W3MONGO> db.re
+db.revokeRolesFromUser       db.revokeRolesFromRole
+db.revokePrivilegesFromRole  db.restaurants
+
+W3MONGO> db.restaurants.insertOne({ "address": { "building": "1007", "coord": [ -73.856077, 40.848447 ], "street": "Morris Park Ave", "zipcode": "10462" }, "borough": "Bronx", "cuisine": "Bakery", "grades": [ { "date": { "$date": 1393804800000 }, "grade": "A", "score": 2 }, { "date": { "$date": 1378857600000 }, "grade": "A", "score": 6 }, { "date": { "$date": 1358985600000 }, "grade": "A", "score": 10 }, { "date": { "$date": 1322006400000 }, "grade": "A", "score": 9 }, { "date": { "$date": 1299715200000 }, "grade": "B", "score": 14 } ], "name": "Morris Park Bake Shop", "restaurant_id": "30075445" ;}) 
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:595)
+
+> 1 | db.restaurants.insertOne({ "address": { "building": "1007", "coord": [ -73.856077, 40.848447 ], "street": "Morris Park Ave", "zipcode": "10462" }, "borough": "Bronx", "cuisine": "Bakery", "grades": [ { "date": { "$date": 1393804800000 }, "grade": "A", "score": 2 }, { "date": { "$date": 1378857600000 }, "grade": "A", "score": 6 }, { "date": { "$date": 1358985600000 }, "grade": "A", "score": 10 }, { "date": { "$date": 1322006400000 }, "grade": "A", "score": 9 }, { "date": { "$date": 1299715200000 }, "grade": "B", "score": 
+14 } ], "name": "Morris Park Bake Shop", "restaurant_id": "30075445" ;})    
+    |                                                                       
+                                                                            
+                                                                            
+                                                                            
+                                                                            
+                                                                            
+                                                                            
+                                                                     ^      
+  2 |
+
+W3MONGO> db.restaurant.insertOne({
+...   "address": {
+...      "building": "1007",
+...      "coord": [ -73.856077, 40.848447 ],
+...      "street": "Morris Park Ave",
+...      "zipcode": "10462"
+...   },
+...   "borough": "Bronx",
+...   "cuisine": "Bakery",
+...   "grades": [
+...      { "date": { "$date": 1393804800000 }, "grade": "A", "score": 2 },
+...      { "date": { "$date": 1378857600000 }, "grade": "A", "score": 6 },
+...      { "date": { "$date": 1358985600000 }, "grade": "A", "score": 10 },
+...      { "date": { "$date": 1322006400000 }, "grade": "A", "score": 9 },
+...      { "date": { "$date": 1299715200000 }, "grade": "B", "score": 14 }
+...   ],
+...   "name": "Morris Park Bake Shop",
+...   "restaurant_id": "30075445"
+... });
+{
+  acknowledged: true,
+  insertedId: ObjectId("6379c6164a0e7e56764182a9")
+}
+W3MONGO> db.restaurant.find()
+[
+  {
+    _id: ObjectId("6379c6164a0e7e56764182a9"),
+    address: {
+      building: '1007',
+      coord: [ -73.856077, 40.848447 ],
+      street: 'Morris Park Ave',
+      zipcode: '10462'
+    },
+    borough: 'Bronx',
+    cuisine: 'Bakery',
+    grades: [
+      { date: { '$date': 1393804800000 }, grade: 'A', score: 2 },
+      { date: { '$date': 1378857600000 }, grade: 'A', score: 6 },
+      { date: { '$date': 1358985600000 }, grade: 'A', score: 10 },
+      { date: { '$date': 1322006400000 }, grade: 'A', score: 9 },
+      { date: { '$date': 1299715200000 }, grade: 'B', score: 14 }
+    ],
+    name: 'Morris Park Bake Shop',
+    restaurant_id: '30075445'
+  }
+]
+W3MONGO> show dbs
+AssgnThird   80.00 KiB
+EmpDB        92.00 KiB
+ShopDB      140.00 KiB
+W3MONGO      48.00 KiB
+admin        40.00 KiB
+config      108.00 KiB
+local        72.00 KiB
+W3MONGO> db.restaurant
+W3MONGO.restaurant
+W3MONGO> db.restaurant.find()
+[
+  {
+    _id: ObjectId("6379c6164a0e7e56764182a9"),
+    address: {
+      building: '1007',
+      coord: [ -73.856077, 40.848447 ],
+      street: 'Morris Park Ave',
+      zipcode: '10462'
+    },
+    borough: 'Bronx',
+    cuisine: 'Bakery',
+    grades: [
+      { date: { '$date': 1393804800000 }, grade: 'A', score: 2 },
+      { date: { '$date': 1378857600000 }, grade: 'A', score: 6 },
+      { date: { '$date': 1358985600000 }, grade: 'A', score: 10 },
+      { date: { '$date': 1322006400000 }, grade: 'A', score: 9 },
+      { date: { '$date': 1299715200000 }, grade: 'B', score: 14 }
+    ],
+    name: 'Morris Park Bake Shop',
+    restaurant_id: '30075445'
+  }
+]
+W3MONGO> db.restaurant.find({restuarant_id,name,borough,cuisine}
+... ;
+Uncaught:
+SyntaxError: Unexpected token, expected "," (2:0)
+
+  1 | db.restaurant.find({restuarant_id,name,borough,cuisine}
+> 2 | ;
+    | ^
+  3 |
+
+W3MONGO> db.restaurant.find({restuarant_id,name,borough,cuisine}
+...
+...
+...
+...
+... );
+ReferenceError: restuarant_id is not defined
+W3MONGO> db.restaurant.find({ _id, name, borough, cuisine });
+ReferenceError: _id is not defined
+W3MONGO> db.restaurant.find({ _id:1, name:1, borough:1, cuisine:1 });       
+
+W3MONGO> db.restaurant.find({},{ _id:1, name:1, borough:1, cuisine:1 });    
+[
+  {
+    _id: ObjectId("6379c6164a0e7e56764182a9"),
+    borough: 'Bronx',
+    cuisine: 'Bakery',
+    name: 'Morris Park Bake Shop'
+  }
+]
+W3MONGO> db.restaurant.find({},{ _id:0, name:1, borough:1, cuisine:1 });    
+[
+  {
+    borough: 'Bronx',
+    cuisine: 'Bakery',
+    name: 'Morris Park Bake Shop'
+  }
+]
+W3MONGO> db.restaurant.find({},{ _id:0, name:1, borough:1, cuisine:1, zipcode:1 });
+[
+  {
+    borough: 'Bronx',
+    cuisine: 'Bakery',
+    name: 'Morris Park Bake Shop'
+  }
+]
+W3MONGO> db.restaurant.find({borough:Bronx},{ _id:0, name:1, borough:1, cuisine:1, zipcode:1 });
+ReferenceError: Bronx is not defined
+W3MONGO> db.restaurant.find({borough:'Bronx'},{ _id:0, name:1, borough:1, cuisine:1, zipcode:1 });
+[
+  {
+    borough: 'Bronx',
+    cuisine: 'Bakery',
+    name: 'Morris Park Bake Shop'
+  }
+]
+W3MONGO> db.restaurant.find({borough:'Bronx'},{ _id:0, name:1, borough:1, cuisine:1, zipcode:1 }).limit(5);
+[
+  {
+    borough: 'Bronx',
+    cuisine: 'Bakery',
+    name: 'Morris Park Bake Shop'
+  }
+]
+W3MONGO> db.restaurant.find({borough:'Bronx'},{ _id:0, name:1, borough:1, cuisine:1, zipcode:1 }).skip(5);
+
+W3MONGO> db.restaurant.find({borough:'Bronx'},{ _id:0, name:1, borough:1, cuisine:1, zipcode:1 }).skip(1);
+
+W3MONGO> db.restaurant.find({borough:'Bronx'},{ _id:0, name:1, borough:1, cuisine:1, zipcode:1 }).skip(0);
+[
+  {
+    borough: 'Bronx',
+    cuisine: 'Bakery',
+    name: 'Morris Park Bake Shop'
+  }
+]
+W3MONGO> db.restaurant.insertMany([ 
+... {
+...  "address": {
+...    "building": "8825",
+...    "coord": [-73.8803827, 40.7643124],
+...    "street": "Astoria Boulevard",
+...    "zipcode": "11369"
+...  },
+...  "borough": "Queens",
+...  "cuisine": "American",
+...  "grades": [ {
+...    "date": {"$date": "2014-11-15T00:00:00.000Z"},
+...    "grade": "Z",
+...    "score": 38
+...  },
+...  {
+...    "date": {"$date": "2014-05-02T00:00:00.000Z"},
+...    "grade": "A",
+...    "score": 10
+...  },
+...  {
+...    "date": {"$date": "2013-03-02T00:00:00.000Z"},
+...    "grade": "A",
+...    "score": 7
+...  },
+...  {
+...    "date": {"$date": "2012-02-10T00:00:00.000Z"},
+...    "grade": "A",
+...    "score": 13
+...  }],
+...    "name": "Brunos On The Boulevard",
+...    "restaurant_id": "40356151"
+... } ]);
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId("6379cbd54a0e7e56764182aa") }
+}
+W3MONGO> db.restaurant.find()
+[
+  {
+    _id: ObjectId("6379c6164a0e7e56764182a9"),
+    address: {
+      building: '1007',
+      coord: [ -73.856077, 40.848447 ],
+      street: 'Morris Park Ave',
+      zipcode: '10462'
+    },
+    borough: 'Bronx',
+    cuisine: 'Bakery',
+    grades: [
+      { date: { '$date': 1393804800000 }, grade: 'A', score: 2 },
+      { date: { '$date': 1378857600000 }, grade: 'A', score: 6 },
+      { date: { '$date': 1358985600000 }, grade: 'A', score: 10 },
+      { date: { '$date': 1322006400000 }, grade: 'A', score: 9 },
+      { date: { '$date': 1299715200000 }, grade: 'B', score: 14 }
+    ],
+    name: 'Morris Park Bake Shop',
+    restaurant_id: '30075445'
+  },
+  {
+    _id: ObjectId("6379cbd54a0e7e56764182aa"),
+    address: {
+      building: '8825',
+      coord: [ -73.8803827, 40.7643124 ],
+      street: 'Astoria Boulevard',
+      zipcode: '11369'
+    },
+    borough: 'Queens',
+    cuisine: 'American',
+    grades: [
+      {
+        date: { '$date': '2014-11-15T00:00:00.000Z' },
+        grade: 'Z',
+        score: 38
+      },
+      {
+        date: { '$date': '2014-05-02T00:00:00.000Z' },
+        grade: 'A',
+        score: 10
+      },
+      {
+        date: { '$date': '2013-03-02T00:00:00.000Z' },
+        grade: 'A',
+        score: 7
+      },
+      {
+        date: { '$date': '2012-02-10T00:00:00.000Z' },
+        grade: 'A',
+        score: 13
+      }
+    ],
+    name: 'Brunos On The Boulevard',
+    restaurant_id: '40356151'
+  }
+]
+W3MONGO> db.restaurant.find({ $group: {_id:'%name'  }  })
+MongoServerError: unknown top level operator: $group. If you have a field name that starts with a '$' symbol, consider using $getField or $setField.    
+W3MONGO> db.restaurant.aggregate({ $group:{ _id:'%name'  }  })
+[ { _id: '%name' } ]
+W3MONGO> db.restaurant.aggregate({ $group:{ _id:'%name'  }  });
+[ { _id: '%name' } ]
+W3MONGO> db.restaurant.aggregate({ $group:{ _id:'%borough'  }  });
+[ { _id: '%borough' } ]
+W3MONGO> db.restaurant.aggregate({ $group:{ _id:'%borough', totalCount:{$sum:1}  }  });
+[ { _id: '%borough', totalCount: 2 } ]
+W3MONGO> db.restaurant.aggregate({ $group:{ _id:'%borough', totalCount:{$maxm:1}  }  });
+MongoServerError: unknown group operator '$maxm'
+W3MONGO> db.restaurant.aggregate({ $group:{ _id:'%borough', totalCount:{$max:1}  }  });
+[ { _id: '%borough', totalCount: 1 } ]
+W3MONGO> db.restaurant.aggregate({ $group:{ _id:'%score', TheTotalCountis:{$max:1}  }  });
+[ { _id: '%score', TheTotalCountis: 1 } ]
+W3MONGO> db.restaurant.aggregate({ $group:{ _id:'%score', TheTotalCountis:{$sum:1}  }  });
+[ { _id: '%score', TheTotalCountis: 2 } ]
+W3MONGO> db.restaurant.aggregate({ $group:{ _id:'%grades', TheTotalCountis:{$sum:1}  }  });
+[ { _id: '%grades', TheTotalCountis: 2 } ]
+W3MONGO> db.restaurant.aggregate({ $group:{ _id:'%grades.grade', TheTotalCountis:{$sum:1}  }  });
+[ { _id: '%grades.grade', TheTotalCountis: 2 } ]
+W3MONGO> db.restaurant.aggregate({ $group:{ _id:'%zipcode', TheTotalCountis:{$sum:1}  }  });
+[ { _id: '%zipcode', TheTotalCountis: 2 } ]
+W3MONGO> db.restaurant.find().skip(5)
+
+W3MONGO> db.restaurant.find().skip(2)
+
+W3MONGO> db.restaurant.find().skip(1)
+[
+  {
+    _id: ObjectId("6379cbd54a0e7e56764182aa"),
+    address: {
+      building: '8825',
+      coord: [ -73.8803827, 40.7643124 ],
+      street: 'Astoria Boulevard',
+      zipcode: '11369'
+    },
+    borough: 'Queens',
+    cuisine: 'American',
+    grades: [
+      {
+        date: { '$date': '2014-11-15T00:00:00.000Z' },
+        grade: 'Z',
+        score: 38
+      },
+      {
+        date: { '$date': '2014-05-02T00:00:00.000Z' },
+        grade: 'A',
+        score: 10
+      },
+      {
+        date: { '$date': '2013-03-02T00:00:00.000Z' },
+        grade: 'A',
+        score: 7
+      },
+      {
+        date: { '$date': '2012-02-10T00:00:00.000Z' },
+        grade: 'A',
+        score: 13
+      }
+    ],
+    name: 'Brunos On The Boulevard',
+    restaurant_id: '40356151'
+  }
+]
+W3MONGO> show dbs
+AssgnThird   80.00 KiB
+EmpDB        92.00 KiB
+ShopDB      140.00 KiB
+W3MONGO      80.00 KiB
+admin        40.00 KiB
+config      108.00 KiB
+local        72.00 KiB
+W3MONGO> use MapReduceMONOGO
+switched to db MapReduceMONOGO
+MapReduceMONOGO> db.insertOne({ _id:1, name:'Ajay', marks:91 })
+TypeError: db.insertOne is not a function
+MapReduceMONOGO> db.stud-marks.insertOne({ _id:1, name:'Ajay', marks:91 })  
+ReferenceError: marks is not defined
+MapReduceMONOGO> db.stud_marks.insertOne({ _id:1, name:'Ajay', marks:91 })  
+{ acknowledged: true, insertedId: 1 }
+MapReduceMONOGO> db.stud_marks.insertOne({ _id:2, name:'Vijay', marks:95 }) 
+{ acknowledged: true, insertedId: 2 }
+MapReduceMONOGO> db.stud_marks.insertOne({ _id:2, name:'Vijay', marks:96 }) 
+MongoServerError: E11000 duplicate key error collection: MapReduceMONOGO.stud_marks index: _id_ dup key: { _id: 2 }
+MapReduceMONOGO> db.stud_marks.insertOne({ _id:3, name:'Vijay', marks:96 }) 
+{ acknowledged: true, insertedId: 3 }
+MapReduceMONOGO> db.stud_marks.insertOne({ _id:4, name:'Vijay', marks:45 }) 
+{ acknowledged: true, insertedId: 4 }
+MapReduceMONOGO> db.stud_marks.insertOne({ _id:5, name:'Vijay', marks:53 }) 
+{ acknowledged: true, insertedId: 5 }
+MapReduceMONOGO> db.stud_marks.insertOne({ _id:5, name:'Ajay', marks:26 })  
+MongoServerError: E11000 duplicate key error collection: MapReduceMONOGO.stud_marks index: _id_ dup key: { _id: 5 }
+MapReduceMONOGO> db.stud_marks.insertOne({ _id:6, name:'Ajay', marks:26 })  
+{ acknowledged: true, insertedId: 6 }
+MapReduceMONOGO> db.stud_marks.insertOne({ _id:6, name:'Ajay', marks:87 })  
+MongoServerError: E11000 duplicate key error collection: MapReduceMONOGO.stud_marks index: _id_ dup key: { _id: 6 }
+MapReduceMONOGO> db.stud_marks.insertOne({ _id:7, name:'Ajay', marks:87 })  
+{ acknowledged: true, insertedId: 7 }
+MapReduceMONOGO> db.stud_marks.insertOne({ _id:8, name:'Ajay', marks:38 })  
+{ acknowledged: true, insertedId: 8 }
+MapReduceMONOGO> db.stud_marks.find()
+[
+  { _id: 1, name: 'Ajay', marks: 91 },
+  { _id: 2, name: 'Vijay', marks: 95 },
+  { _id: 3, name: 'Vijay', marks: 96 },
+  { _id: 4, name: 'Vijay', marks: 45 },
+  { _id: 5, name: 'Vijay', marks: 53 },
+  { _id: 6, name: 'Ajay', marks: 26 },
+  { _id: 7, name: 'Ajay', marks: 87 },
+  { _id: 8, name: 'Ajay', marks: 38 }
+]
+MapReduceMONOGO> db.stud_marks.aggregate({ $group:{ id_:'$name', TotalMarks:{$sum:1}  }  })
+MongoServerError: The field 'id_' must be an accumulator object
+MapReduceMONOGO> db.stud_marks.aggregate({ $group:{ id_:'$_id', TotalMarks:{$sum:1}  }  })
+MongoServerError: The field 'id_' must be an accumulator object
+MapReduceMONOGO> db.stud_marks.aggregate({ $group:{ id_:'%name', TotalMarks:{$sum:1}  }  })
+MongoServerError: The field 'id_' must be an accumulator object
+MapReduceMONOGO> db.stud_marks.aggregate({ $group:{ id_:'%name' }  })       
+MongoServerError: The field 'id_' must be an accumulator object
+MapReduceMONOGO> db.stud_marks.aggregate({ $group:{ id_:'%name' }  });      
+MongoServerError: The field 'id_' must be an accumulator object
+MapReduceMONOGO> db.stud_marks.aggregate({ $group: { id_:'%marks' }  });    
+MongoServerError: The field 'id_' must be an accumulator object
+MapReduceMONOGO> db.stud_marks.aggregate({ $group: { id_:'$marks' }  });    
+MongoServerError: The field 'id_' must be an accumulator object
+MapReduceMONOGO> db.stud_marks.aggregate({ $group: { id_:{ name:'%name'} }  });
+MongoServerError: The field 'id_' must be an accumulator object
+MapReduceMONOGO> db.stud_marks.aggregate({ $group: { id_:null }  });
+MongoServerError: The field 'id_' must be an accumulator object
+MapReduceMONOGO> db.stud_marks.aggregate([ { $group: { id_:null }  } ]);
+MongoServerError: The field 'id_' must be an accumulator object
+MapReduceMONOGO> db.stud_marks.aggregate([   { $group: { _id:null } } ]);
+[ { _id: null } ]
+MapReduceMONOGO> db.stud_marks.aggregate([   { $group: { _id:'%name' } } ]);
+[ { _id: '%name' } ]
+MapReduceMONOGO> db.stud_marks.aggregate([   { $group: { _id:'$name' } } ]);
+[ { _id: 'Ajay' }, { _id: 'Vijay' } ]
+MapReduceMONOGO> db.stud_marks.aggregate([   { $group: { _id:'$name' }, TotalSubjects:{count:1} } ]);
+MongoServerError: A pipeline stage specification object must contain exactly one field.
+MapReduceMONOGO> db.stud_marks.aggregate([   {   $group: { _id:'$name' , TotalSubjects:{count:1} }   } ]);
+MongoServerError: The field 'TotalSubjects' must be an accumulator object
+MapReduceMONOGO> db.stud_marks.aggregate([   {   $group: { _id:'$name' , 'TotalSubjects':{count:1} }   } ]);
+MongoServerError: The field 'TotalSubjects' must be an accumulator object
+MapReduceMONOGO> db.stud_marks.aggregate([   {   $group: { _id:'$name' , 'TotalSubjects':{$count:1} }   } ]);
+MongoServerError: $count takes no arguments, i.e. $count:{}
+MapReduceMONOGO> db.stud_marks.aggregate([   {   $group: { _id:'$name' , TotalSubjects:{$count:1} }   } ]);
+MongoServerError: $count takes no arguments, i.e. $count:{}
+MapReduceMONOGO> db.stud_marks.aggregate([   {   $group: { _id:'$name' , TotalSubjects:{$count:{}} }   } ]);
+[
+  { _id: 'Vijay', TotalSubjects: 4 },
+  { _id: 'Ajay', TotalSubjects: 4 }
+]
+MapReduceMONOGO> db.stud_marks.aggregate({   group:{   _id:'$name', TotalMarks:{$sum:1}  }   })
+MongoServerError: Unrecognized pipeline stage name: 'group'
+MapReduceMONOGO> db.stud_marks.aggregate({  $group:{   _id:'$name', TotalMarks:{$sum:1}  }   })
+[ { _id: 'Vijay', TotalMarks: 4 }, { _id: 'Ajay', TotalMarks: 4 } ]
+MapReduceMONOGO> db.stud_marks.aggregate({  $group:{   _id:'$name', TotalMarks:{$avg:1}  }   })
+[ { _id: 'Vijay', TotalMarks: 1 }, { _id: 'Ajay', TotalMarks: 1 } ]
+MapReduceMONOGO> db.stud_marks.aggregate({  $group:{   _id:'$name', TotalMarks:{$sum:{}}  }   })
+[ { _id: 'Vijay', TotalMarks: 0 }, { _id: 'Ajay', TotalMarks: 0 } ]
+MapReduceMONOGO> db.stud_marks.aggregate({  $group:{   _id:'$name', TotalMarks:{$sum:'$marks'}  }   })
+[ { _id: 'Vijay', TotalMarks: 289 }, { _id: 'Ajay', TotalMarks: 242 } ]
+MapReduceMONOGO> db.stud_marks.aggregate({  $group:{   _id:'$name', TotalMarks:{$avg:'$marks'}  }   })
+[
+  { _id: 'Vijay', TotalMarks: 72.25 },
+  { _id: 'Ajay', TotalMarks: 60.5 }
+]
+MapReduceMONOGO> db.stud_marks.aggregate({  $group:{   _id:'$name', TotalMarks:{$max:'$marks'}  }   })
+[ { _id: 'Vijay', TotalMarks: 96 }, { _id: 'Ajay', TotalMarks: 91 } ]
+MapReduceMONOGO> db.stud_marks.aggregate({  $group:{   _id:'$name', TotalMarks:{$min:'$marks'}  }   })
+[ { _id: 'Vijay', TotalMarks: 45 }, { _id: 'Ajay', TotalMarks: 26 } ]
+MapReduceMONOGO> db.stud_marks.aggregate({  $group:{   _id:'$name', TotalMarks:{$count:'$marks'}  }   })
+MongoServerError: $count takes no arguments, i.e. $count:{}
+MapReduceMONOGO> db.stud_marks.aggregate({  $group:{   _id:'$name', TotalMarks:{$count:{'$marks'}}  }   })
+Uncaught:
+SyntaxError: Unexpected token (1:79)
+
+> 1 | db.stud_marks.aggregate({  $group:{   _id:'$name', TotalMarks:{$count:{'$marks'}}  }   })
+    |                                                                                ^
+  2 |
+
+MapReduceMONOGO> db.stud_marks.aggregate({  $group:{   _id:'$name', TotalMarks:{$count:{$marks}}  }   })
+ReferenceError: $marks is not defined
+MapReduceMONOGO> db.stud_marks.aggregate({  $group:{   _id:'$name', TotalMarks:{$count:{}  }   })
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:79)
+
+> 1 | db.stud_marks.aggregate({  $group:{   _id:'$name', TotalMarks:{$count:{}  }   })
+    |                                                                                ^
+  2 |
+
+MapReduceMONOGO> db.stud_marks.aggregate({  $group:{   _id:'$name', TotalMarks:{$count:{}  }    } })
+[ { _id: 'Vijay', TotalMarks: 4 }, { _id: 'Ajay', TotalMarks: 4 } ]
+MapReduceMONOGO>
+(To exit, press Ctrl+C again or Ctrl+D or type .exit)
+MapReduceMONOGO>
+
+ajaur@LAPTOP-14FO7GLA MINGW64 ~
+$ ^C
