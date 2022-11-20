@@ -1,6 +1,6 @@
 Assignment Number B2
 Aggregation and Indexing
-
+ 
 use db;
 1.] Create collection student
 
