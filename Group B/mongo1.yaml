@@ -1,1 +1,194 @@
 
+Assignment B1
+CRUD Operations MOngo DB
+
+
+> use db;
+1.] Create a collection employee
+
+> db.createCollection('employee');
+
+2.] Use of insertOne()
+
+> db.employee.insertOne({
+	_id:1,	
+	fname:'Sameer',
+	lname:'B',
+	address:[{city:'Pune'},{state:'Maharashtra'}],
+	officecode:1,
+	jobtitle:'CEO'
+});
+
+
+3.] Use of insertMany()
+
+> db.employee.insertMany([
+	{
+		_id:2,	
+		fname:'Kalash',
+		lname:'S',
+		address:[{city:'Surat'},{state:'Gujrat'}],
+		officecode:2,
+		jobtitle:'CEO'
+	},
+	{
+		_id:3,	
+		fname:'Chinmay',
+		lname:'B',
+		address:[{city:'Pune'},{state:'Maharashtra'}],
+		officecode:1,
+		jobtitle:'CTO'
+	},
+	{
+		_id:4,	
+		fname:'Aditi',
+		lname:'C',
+		address:[{city:'Pune'},{state:'Maharashtra'}],
+		officecode:1,
+		jobtitle:'CTO'
+	},
+	{
+		_id:5,	
+		fname:'Omkar',
+		lname:'B',
+		address:[{city:'Pune'},{state:'Maharashtra'}],
+		officecode:2,
+		jobtitle:'Data Analyst'
+	},
+	{
+		_id:6,	
+		fname:'Yash',
+		lname:'K',
+		address:[{city:'Nashik'},{state:'Maharashtra'}],
+		officecode:2,
+		jobtitle:'Data Analyst'
+	},
+	{
+		_id:7,	
+		fname:'Kajol',
+		lname:'R',
+		address:[{city:'Nashik'},{state:'Maharashtra'}],
+		officecode:2,
+		jobtitle:'Sales Manager'
+	},
+	{
+		_id:8,	
+		fname:'Kunal',
+		lname:'T',
+		address:[{city:'Pune'},{state:'Maharashtra'}],
+		officecode:1,
+		jobtitle:'SDE'
+	},
+	{
+		_id:9,	
+		fname:'Arya',
+		lname:'M',
+		address:[{city:'Pune'},{state:'Maharashtra'}],
+		officecode:1,
+		jobtitle:'SDE'
+	}
+]);
+
+
+4.] Display All Records in collection
+> db.employee.find().pretty();
+
+5.] Use of and Logical operator
+
+//Find Employees who are from Gujrat and have officecode as 2
+
+> db.employee.find({$and:[{'address.state':'Gujrat'},{'officecode':2}]});
+
+//Find Employees who are from Pune and have jobtitle as SDE
+
+> db.employee.find({$and:[{'address.city':'Pune'},{'jobtitle':'SDE'}]})
+
+6.] Use of 'or' Logical Operator
+
+//Find Employees whoe are from Pune or have jobtitle as Data Analyst
+
+> db.employee.find({$or:[{'address.city':'Pune'},{'jobtitle':'Data Analyst'}]})
+
+7.] Use of 'not' Logical Operator
+
+//Find Employees who are not from Pune
+
+> db.employee.find({'address.city' : {$not:{$eq: 'Pune'}}});
+
+//Find Employees who don not have officecode as 2
+
+> db.employee.find({'officecode' : {$not: {$eq:2}}});
+
+8.] Update the documents where officecode is 2, change officeCode to 3. (use update() with {multi:true} )
+
+> db.employee.update({'officecode':2}, {$set:{'officecode':3}}, {multi:true})
+
+> db.employee.find().pretty();
+
+9.] Use of save() method
+/*
+db.employee.save(
+{
+	_id:9,
+	fname : 'Arya',
+	lname : 'M',
+	address : [{city:'Nashik'},{state:'Maharashtra'}],
+	officecode : 2,
+	jobtitle : 'Data Analyst'
+}
+);
+*/
+//In mongodb version 4 onwards, save() is deprecated, so here replaceOne is used
+> db.employee.replaceOne(
+{
+		_id:9,	
+		fname:'Arya',
+		lname:'M',
+		address:[{city:'Pune'},{state:'Maharashtra'}],
+		officecode:1,
+		jobtitle:'SDE'
+},
+{
+	_id:9,
+	fname : 'Arya',
+	lname : 'M',
+	address : [{city:'Nashik'},{state:'Maharashtra'}],
+	officecode : 2,
+	jobtitle : 'Data Analyst'
+}
+);
+
+> db.employee.find().pretty();
+
+
+10.] Use of limit():
+
+> db.employee.find().limit(4).pretty();
+
+11.] Use of sort():
+
+> db.employee.find({}).sort({'fname':1}).pretty();
+
+
+12.] Delete a document where id is 9. (use deleteOne())
+
+> db.employee.deleteOne({'_id':9});
+
+> db.employee.find().pretty();
+
+13.] Delete documents where officecode is 3 (use of deleteMany())
+
+> db.employee.deleteMany({'officecode':3});
+
+> db.employee.find().pretty();
+
+14.] Delete all Documents
+
+> db.employee.deleteMany({});
+
+> db.employee.find().pretty();
+
+
+15.] Drop Collection employee
+
+> db.employee.drop();
