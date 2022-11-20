@@ -1,3 +1,10 @@
+-- Assignment 2 A)
+-- SQL Queries:
+-- A. Design and Develop SQL DDL statements which
+-- demonstrate the use of SQL objects such as Table, View,
+-- Index, Sequence, Synonym
+
+
 CREATE TABLE student_info(
       rollno INT PRIMARY KEY,
       name VARCHAR(255) NOT NULL,
