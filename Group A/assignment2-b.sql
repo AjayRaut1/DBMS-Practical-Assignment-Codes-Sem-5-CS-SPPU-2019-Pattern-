@@ -1,3 +1,9 @@
+-- B. Design at least 10 SQL queries for suitable database
+-- application using SQL DML statements: Insert, Select,
+-- Update, Delete with operators, functions and set 
+-- operator.
+
+
 CREATE TABLE Stu_info (
 id INT PRIMARY KEY,
 rollno INT NOT NULL,
